@@ -65,7 +65,7 @@ public class StringOps {
         return fin;
     }
 
-    public static String allIndexOf (String str, char ch) {
+    public static int[] allIndexOf (String str, char ch) {
         int[] out = new int[str.length()];
 		int index = 0;
 		for (int i = 0; i < str.length(); i++) {
@@ -82,6 +82,6 @@ public class StringOps {
 				answer += out[i] + "}";
 			}
 		}
-		return answer;
+		return out;
     }
 }

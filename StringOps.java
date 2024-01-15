@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(allIndexOf("Hello World", ' '));
+        System.out.println(allIndexOf("Hello World", 'l'));
 		// “introToComputerScience”
     }
 
@@ -66,21 +66,19 @@ public class StringOps {
     }
 
     public static int[] allIndexOf (String str, char ch) {
-        int[] out = new int[str.length()];
 		int index = 0;
+		for (int i = 0; i < str.length(); i++) {
+			if (ch == str.charAt(i)) {
+				index++;
+			}			
+		}
+		int[] out = new int[index];
+		index = 0;
 		for (int i = 0; i < str.length(); i++) {
 			if (ch == str.charAt(i)) {
 				out[index] = i;
 				index++;
 			}			
-		}
-        String answer = "output: {";
-		for (int i = 0; i < index; i++) {
-			if (i != (index-1)) {
-				answer = answer + out[i] + ", ";
-			} else {
-				answer += out[i] + "}";
-			}
 		}
 		return out;
     }
